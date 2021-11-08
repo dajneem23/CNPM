@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const useFormRegister = (callback, validate) => {
     const [values, setValues] = useState({
-        firstName: '',
+        fullName: '',
         lastName: '',
         email: '',
         password: '',
@@ -25,6 +25,7 @@ const useFormRegister = (callback, validate) => {
       e.preventDefault();
       setErrors(validate(values));
       setIsSubmitting(true);
+      
     };
     const onsubmit = e=>{
       setIsSubmitting(true);

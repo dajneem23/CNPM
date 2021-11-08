@@ -8,11 +8,12 @@ import SignUp from "./Component/SignupPage/SignUp";
 import NotFound404 from "./Component/404NotFound/index";
 import Profile from './Component/Profile/index';
 import EditProFile from './Component/Profile/EditProfile/index';
-import logo from './logo.svg';
 import Home from './Component/Home/Home';
 import Search from './Component/Search/index';
 import Detail from './Component/Details/index';
+import dotenv from 'dotenv';
 
+dotenv.config()
 function App() {
   return (
     <Router>

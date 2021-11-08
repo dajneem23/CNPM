@@ -1,8 +1,8 @@
 export default function validateInfo(values) {
     let error = {} ;
-    if(!values.email)
+    if(!values.userName)
     {
-      error.email='Email is required';
+      error.userName='Email is required';
     }
     if (!values.password) {
       error.password = 'Password is required';

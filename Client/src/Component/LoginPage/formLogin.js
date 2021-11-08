@@ -85,10 +85,10 @@ export default function SignIn({ submitFormLogin }) {
             >
               <TextField
                 fullWidth
-                id="email"
-                label="Email Address*"
-                name="email"
-                autoComplete="email"
+                id="userName"
+                label="userName "
+                name="userName"
+                autoComplete="userName"
                 autoFocus
                 variant="standard"
                 InputProps={{
@@ -98,10 +98,10 @@ export default function SignIn({ submitFormLogin }) {
                     </InputAdornment>
                   ),
                 }}
-                value={values.email}
+                value={values.userName}
                 onChange={handleChange}
               />
-              {errors.email && <p className="error">{errors.email}</p>}
+              {errors.userName && <p className="error">{errors.userName}</p>}
               <TextField
                 margin="normal"
                 required

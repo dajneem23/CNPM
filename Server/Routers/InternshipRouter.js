@@ -8,15 +8,13 @@ const Internship= require('../Models/Internship');
 const InternshipRouter=express.Router();
 const signToken=userID=>{
     return JWT.sign({
-        iss:"GymLord",
+        iss:"TLCN",
         sub:userID
     },process.env.secretKey,{expiresIn:"1h"});
 }
 
 InternshipRouter.post('/signup',(req,res)=>{
     const {...content} =req.body
-    console.log(content.userName)
-    
     Internship.findOne({'userName':content.userName},(err,user)=>{
             if(err) {res.status(500).json({
                 message:{msgBody:"Error has occured 1"},
@@ -62,7 +60,7 @@ InternshipRouter.post('/signin',passport.authenticate('local',{session:false}),(
         })
     }
 })
-InternshipRouter.post('/test',(req,res)=>{
+InternshipRouter.get('/test',(req,res)=>{
     res.status(200).json({
         "msg":"123123 123123"
      })
