@@ -33,7 +33,9 @@ const  connection =async()=>{
 } 
 connection()
 
-const InternshipRouter=require('./Routers/InternshipRouter')
+const InternshipRouter=require('./Routers/Internship.route')
 app.use('/intern',InternshipRouter)
+const UserRoute = require('./Routers/User.route')
+app.use('/user',UserRoute)
 app.listen(process.env.PORT || 5000,
   ()=>{console.log("server is running!!" + process.env.PORT)});

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {toast} from 'react-toastify';
-const axios = require('axios');
+const axios = require('../../Service/axios');
 
 const useFormRegister = (callback, validate) => {
     const [values, setValues] = useState({
@@ -25,7 +25,7 @@ const useFormRegister = (callback, validate) => {
       e.preventDefault();
       setErrors(validate(values));
       setIsSubmitting(true);
-      
+
     };
     const onsubmit = e=>{
       setIsSubmitting(true);
