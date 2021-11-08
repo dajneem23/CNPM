@@ -87,30 +87,17 @@ const formSignUp = ({ submitForm }) => {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="fname"
-                  name="firstName"
+                  name="name"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="name"
+                  label=" Name"
                   autoFocus
                   variant="standard"
-                  value={values.firstName}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                  variant="standard"
-                  value={values.lastName}
+                  value={values.name}
                   onChange={handleChange}
                 />
               </Grid>
@@ -118,15 +105,15 @@ const formSignUp = ({ submitForm }) => {
                 <TextField
                   required
                   fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
+                  id="userName"
+                  label="UserName"
+                  name="userName"
+                  autoComplete="userName"
                   variant="standard"
-                  value={values.email}
+                  value={values.userName}
                   onChange={handleChange}
                 />
-                {errors.email && <p className="error">{errors.email}</p>}
+                {errors.userName && <p className="error">{errors.userName}</p>}
               </Grid>
               <Grid item xs={12}>
                 <TextField

@@ -1,5 +1,6 @@
 import axios from './axios'
 const internPath='/intern'
+const userPath='/user'
 export const Intern={
     Login:  async ({userName, password})=>{
         try{
@@ -16,6 +17,11 @@ export const Intern={
         catch(e){
             console.log(e)
         }
+    }
+}
+export const User={
+    Info: async ()=>{
+        return await axios.get(`${userPath}/info`)
     }
 }
  
