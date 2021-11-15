@@ -11,6 +11,7 @@ import EditProFile from './Component/Profile/EditProfile/index';
 import Home from './Component/Home/Home';
 import Search from './Component/Search/index';
 import Detail from './Component/Details/index';
+import Loading from './Component/LoadingPage/index'
 import dotenv from 'dotenv';
 
 dotenv.config()
@@ -25,6 +26,7 @@ function App() {
         <Route path="/editprofile" component={EditProFile} />
         <Route path="/job/:id" component={Detail}/>
         <Route path="/job" component={Search} />
+        <Route path="/load" component={Loading} />
         <Route path="/" component={Home} />
         <Route component={NotFound404} />
       </Switch>

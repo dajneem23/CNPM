@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import {toast} from 'react-toastify';
-import {Intern} from '../../Service/User.service'
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import { Intern } from "../../Service/User.service";
 
-const axios = require('../../Service/axios');
+const axios = require("../../Service/axios");
 const useFormRegister = (callback, validate) => {
   const [values, setValues] = useState({
     name: "",
@@ -21,26 +21,30 @@ const useFormRegister = (callback, validate) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
     setIsSubmitting(true);
-    await Intern.SignUp({...values}).then(res=>{
-      console.log(res)
-    }).catch(err=>{
-      console.log(err)
-    })
   };
   const onsubmit = (e) => {
     setIsSubmitting(true);
   };
-  useEffect(() => {
+  useEffect(async () => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       console.log(values);
       toast.configure();
-      toast.success("Đăng ký thành công", {
-        position: toast.POSITION.BOTTOM_LEFT,
-      });
+      await Intern.SignUp({ ...values })
+        .then((res) => {
+          toast.success("Đăng ký thành công", {
+            position: toast.POSITION.BOTTOM_RIGHT,
+          });
+          console.log(res);
+          window.location = "/signin";
+        })
+        .catch((err) => {
+          setIsSubmitting(false);
+          console.log(err);
+        });
     }
   }, [errors, values]);
 

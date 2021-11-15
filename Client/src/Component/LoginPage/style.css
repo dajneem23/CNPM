@@ -12,3 +12,9 @@
     border: 5px solid #3daee7;
     
 }
+.orGoogle{
+    display: flex;
+    justify-content: center;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
