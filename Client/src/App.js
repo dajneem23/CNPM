@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import Header from "./Component/Header/index";
@@ -20,7 +21,6 @@ import CreateCV from "./Component/CV/CreateCV";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./Service/Auth.context";
 import ChatBox from "./Component/Chatbox/ChatBox";
-
 import UpdateJob from "./Component/JobsManager/UpdateJob"
 const ROLE_ADMIN = 0;
 const ROLE_COOP = 1;
